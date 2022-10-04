@@ -1,13 +1,11 @@
 import styled from "styled-components"
 
 export default function Session({session}) {
-    console.log(session)
-
     return(
         <Container>
             <h1>{session.weekday} - {session.date}</h1>
             <BoxButton>
-                {session.showtimes.map((hour) => <ButtonHour>{hour.name}</ButtonHour>)}
+                {session.showtimes.map((hour) => <ButtonHour key={hour.id}>{hour.name}</ButtonHour>)}
             </BoxButton>
             
         </Container>

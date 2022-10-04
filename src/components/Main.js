@@ -24,5 +24,5 @@ const ContainerMain = styled.div`
         letter-spacing: 0.04em;
         color: #293845;
 
-        margin: 50px 0;
+        margin: 40px 0;
 `
