@@ -3,13 +3,16 @@ import axios from "axios";
 import Main from "./Main";
 import Session from "./Session";
 import Footer from "./Footer";
+import { useParams } from "react-router-dom";
 
-export default function SessionMovie({idMovie}) {
+export default function SessionMovie() {
+    const { id }  = useParams();
+
     const [movie, setMovie] = useState([])
     const [movieDays, setMovieDays] = useState([])
 
     useEffect(() => {
-        const URL = `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idMovie}/showtimes`
+        const URL = `https://mock-api.driven.com.br/api/v5/cineflex/movies/${id}/showtimes`
         axios.get(URL)
         .then((res) => {
             setMovie(res.data)
@@ -18,17 +21,19 @@ export default function SessionMovie({idMovie}) {
         .catch((err) => {
             console.log(err)
         })
-    }, [idMovie])
+    }, [])
 
 
     return (
         <>
-            <Main tittle={"Selecione o horário"}>
-                {movie && (
-                    movieDays.map((session) => <Session key={session.id}session={session}/>)
-                )}
-            </Main>
-            <Footer imgSrc={movie.posterURL} tittle={movie.title}/>
+            {movie && (
+                <>
+                    <Main tittle={"Selecione o horário"}>
+                        {movieDays.map((session) => <Session key={session.id}session={session}/>)}
+                    </Main>
+                    <Footer imgSrc={movie.posterURL} tittle={movie.title}/>
+                </>
+            )}
         </>
     );
 }

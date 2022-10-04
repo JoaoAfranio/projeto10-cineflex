@@ -15,7 +15,7 @@ export default function Footer({imgSrc, tittle}) {
 
 const Container = styled.div`
     height: 100px;
-    width: 375px;
+    width: 100%;
 
     display: flex;
     align-items: center;
