@@ -16,7 +16,7 @@ const ContainerMain = styled.div`
     align-items: center;
 
     margin-top: 70px;
-    margin-bottom: 120px;
+    margin-bottom: 140px;
 
     h1 {
         font-family: Roboto;
