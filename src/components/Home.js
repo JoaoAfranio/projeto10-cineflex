@@ -2,16 +2,28 @@ import styled from "styled-components";
 import Main from "./Main"
 import Movie from "./Movie";
 
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 export default function Home() {
+    const [listMovies, setListMovies] = useState([])
+
+    useEffect(() => {
+        const URL = "https://mock-api.driven.com.br/api/v5/cineflex/movies"
+        axios.get(URL)
+        .then((res) => {
+            setListMovies(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }, [])
+
 
     return (
         <Main tittle={"Selecione o Filme"}>
             <ContainerMovies>
-                <Movie imgSrc={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"}/>
-                <Movie imgSrc={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"}/>
-                <Movie imgSrc={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"}/>
-                <Movie imgSrc={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"}/>
-                <Movie imgSrc={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"}/>
+                {listMovies.map((movie) => <Movie key={movie.id} imgSrc={movie.posterURL} />)}
             </ContainerMovies>
         </Main>
     );
