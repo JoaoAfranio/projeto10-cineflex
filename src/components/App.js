@@ -1,3 +1,11 @@
+import Header from "./Header";
+import GlobalStyle from "../assets/css/GlobalStyle";
+
 export default function App(){
-    return <h1>Cineflex</h1>;
+    return (
+    <>
+        <GlobalStyle />   
+        <Header /> 
+    </>
+    )
 }
