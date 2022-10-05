@@ -6,28 +6,27 @@ export default function Sucess() {
     const location = useLocation();
     const {ids, name, cpf} = location.state.infoPurchase;
     const session = location.state.movie;
-    console.log(session)
 
     return (
         <Main tittle={"Pedido feito com sucesso!"} sucess={true}>
             <Info>
                 <h1>Filme e sessão</h1>
-                <h2>{session?.movie.title}</h2>
-                <h2>{session?.day.date} {session?.name}</h2>
+                <h2 data-identifier="movie-session-infos-reserve-finished">{session?.movie.title}</h2>
+                <h2 data-identifier="movie-session-infos-reserve-finished">{session?.day.date} {session?.name}</h2>
             </Info>
 
             <Info>
                 <h1>Ingressos</h1>
-                {ids.map((id) => <h2>Assento {id}</h2>)}
+                {ids.map((id) => <h2 data-identifier="seat-infos-reserve-finished" key={id}>Assento {id}</h2>)}
             </Info>
 
             <Info>
                 <h1>Comprador</h1>
-                <h2>Nome: {name}</h2>
-                <h2>CPF: {cpf}</h2>
+                <h2 data-identifier="buyer-infos-reserve-finished">Nome: {name}</h2>
+                <h2 data-identifier="buyer-infos-reserve-finished">CPF: {cpf}</h2>
             </Info>
 
-            <ButtonHome to="/">Voltar para Home</ButtonHome>
+            <ButtonHome data-identifier="back-to-home-btn" to="/">Voltar para Home</ButtonHome>
         </Main>
     )
 }

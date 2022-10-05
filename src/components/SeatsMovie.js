@@ -88,15 +88,15 @@ export default function SeatsMovie() {
 
                     <ContainerStatus>
                             <BoxStatus>
-                                <Status className="selected"/>
+                                <Status className="selected" data-identifier="seat-selected-subtitle"/>
                                 <p>Selecionado</p>
                             </BoxStatus>
                             <BoxStatus>
-                                <Status className="available"/>
+                                <Status className="available" data-identifier="seat-available-subtitle"/>
                                 <p>Disponível</p>
                             </BoxStatus>
                             <BoxStatus>
-                                <Status className="occupied"/>
+                                <Status className="occupied" data-identifier="seat-unavailable-subtitle"/>
                                 <p>Ocupado</p>
                             </BoxStatus>
                     </ContainerStatus>
@@ -104,16 +104,16 @@ export default function SeatsMovie() {
                     <ContainerPerson>
                         <Info>
                             <label>Nome do comprador:</label>
-                            <input onChange={(e) => {setName(e.target.value)}} value={name} type="text" placeholder="Digite seu nome..." />
+                            <input onChange={(e) => {setName(e.target.value)}} value={name} type="text" placeholder="Digite seu nome..."  data-identifier="buyer-name-input"/>
                         </Info>
 
                         <Info>
                             <label>CPF do comprador:</label>
-                            <input onChange={(e) => {setCPF(e.target.value)}} value={CPF} type="text" placeholder="Digite seu CPF..." />
+                            <input onChange={(e) => {setCPF(e.target.value)}} value={CPF} type="text" placeholder="Digite seu CPF..." data-identifier="buyer-cpf-input"/>
                         </Info>
                     </ContainerPerson>
 
-                    <Button onClick={() => {bookSeats()}}>Reservar assento(s)</Button>
+                    <Button onClick={() => {bookSeats()}} data-identifier="reservation-btn">Reservar assento(s)</Button>
                 </Main>
                 <Footer imgSrc={session?.movie?.posterURL} tittle={session?.movie?.title} time={{day : session?.day?.weekday, hour: session?.name}}/>
             </>

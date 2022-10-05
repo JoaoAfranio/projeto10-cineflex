@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 export default function Session({session}) {
     return(
-        <Container>
+        <Container data-identifier="session-date">
             <h1>{session.weekday} - {session.date}</h1>
             <BoxButton>
-                {session.showtimes.map((hour) => <ButtonHour to={`/sessao/${hour.id}`} key={hour.id}>{hour.name}</ButtonHour>)}
+                {session.showtimes.map((hour) => <ButtonHour data-identifier="hour-minute-btn" to={`/sessao/${hour.id}`} key={hour.id}>{hour.name}</ButtonHour>)}
             </BoxButton>
             
         </Container>

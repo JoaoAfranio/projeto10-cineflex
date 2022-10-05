@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export default function Header() {
+
     return (
         <Content>
+            <ion-icon name="arrow-back-outline"></ion-icon>
             <h1>CINEFLEX</h1>
         </Content>
     );
@@ -25,6 +27,15 @@ const Content = styled.div`
         font-family: Roboto;
         font-size: 34px;
         color: #E8833A;
+    }
+
+    ion-icon {
+        cursor: pointer;
+        
+        font-size: 28px;
+        color: #293845;;
+        position: fixed;
+        left: 30px;
     }
 
 `;

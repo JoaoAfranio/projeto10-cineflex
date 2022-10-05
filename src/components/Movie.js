@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export default function Movie({imgSrc, idMovie}) {
     return(
-        <Box to={`/filme/${idMovie}`}>
+        <Box data-identifier="movie-outdoor" to={`/filme/${idMovie}`}>
             <img src={imgSrc} alt="poster"></img>
         </Box>
         )

@@ -5,13 +5,13 @@ export default function Seat({ seat, handleSeat, isSelected }) {
     return (
         <>
             {seat.isAvailable === false && (
-                <BoxSeat className="occupied" onClick={() => {handleSeat(seat)}}>
+                <BoxSeat data-identifier="seat" className="occupied" onClick={() => {handleSeat(seat)}}>
                     {seat.name}
                 </BoxSeat>
             )}
 
             {seat.isAvailable === true && (
-                <BoxSeat className={`${isSelected && "selected"}`} onClick={() => {handleSeat(seat)}} >
+                <BoxSeat data-identifier="seat" className={`${isSelected && "selected"}`} onClick={() => {handleSeat(seat)}} >
                     {seat.name}
                 </BoxSeat>
             )}

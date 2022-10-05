@@ -5,11 +5,11 @@ export default function Footer({imgSrc, tittle, time}) {
 
     return(
             <Container>
-                <BoxImg>
+                <BoxImg data-identifier="movie-img-preview">
                     <img src={imgSrc} alt="poster" />
                 </BoxImg>
                 
-                <BoxInfo>
+                <BoxInfo data-identifier="movie-and-session-infos-preview">
                     <h1>{tittle}</h1>
                     {time && (
                         <h1>{time.day} - {time.hour}</h1>

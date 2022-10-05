@@ -21,7 +21,7 @@ export default function SessionMovie() {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, [id])
 
 
     return (
