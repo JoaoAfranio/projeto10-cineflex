@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import Main from "./Main";
+import Seats from "./Seats";
 
 export default function SeatsMovie() {
     const { id }  = useParams();
@@ -25,14 +26,10 @@ export default function SeatsMovie() {
         <>
         {session && (
             <> 
-            
-            {console.log(session)}
-
-
                 <Main tittle={"Selecione o(s) assento(s)"}>
-                    assentos
+                    <Seats listSeats={session?.seats}/>
                 </Main>
-                <Footer imgSrc={session.posterURL} tittle={session.title}/>
+                <Footer imgSrc={session?.movie?.posterURL} tittle={session?.movie?.title}/>
             </>
         )}
         </>

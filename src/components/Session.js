@@ -6,7 +6,7 @@ export default function Session({session}) {
         <Container>
             <h1>{session.weekday} - {session.date}</h1>
             <BoxButton>
-                {session.showtimes.map((hour) => <ButtonHour to={`sessao/${hour.id}`} key={hour.id}>{hour.name}</ButtonHour>)}
+                {session.showtimes.map((hour) => <ButtonHour to={`/sessao/${hour.id}`} key={hour.id}>{hour.name}</ButtonHour>)}
             </BoxButton>
             
         </Container>
