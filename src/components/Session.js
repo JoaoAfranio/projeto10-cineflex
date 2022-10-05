@@ -18,10 +18,12 @@ const Container = styled.div`
     flex-direction: column;
     width: 80%;
 
+    margin-bottom: 20px;
+
     h1 {
         font-family: Roboto;
         font-size: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 
 `;

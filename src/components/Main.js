@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function Main({tittle, children}) {
+export default function Main({tittle, children, sucess}) {
     return (
         <ContainerMain>
-            <h1>{tittle}</h1>
+            <TittleContainer sucess={sucess}>{tittle}</TittleContainer>
             {children}
         </ContainerMain>
     )
@@ -18,11 +18,13 @@ const ContainerMain = styled.div`
     margin-top: 70px;
     margin-bottom: 140px;
 
-    h1 {
-        font-family: Roboto;
+`
+
+const TittleContainer = styled.h1`
+font-family: Roboto;
         font-size: 24px;
         letter-spacing: 0.04em;
-        color: #293845;
+        color: ${props => props.sucess === true ? "#247A6B" : "#293845"};
 
         margin: 40px 0;
 `

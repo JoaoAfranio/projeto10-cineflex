@@ -7,7 +7,7 @@ export default function Sucess() {
     console.log(location.state.info)
 
     return (
-        <Main tittle={"Pedido feito com sucesso!"}>
+        <Main tittle={"Pedido feito com sucesso!"} sucess={true}>
             <p>{name} {cpf}</p>
         </Main>
     )
