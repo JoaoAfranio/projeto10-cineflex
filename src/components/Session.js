@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 export default function Session({session}) {
@@ -5,7 +6,7 @@ export default function Session({session}) {
         <Container>
             <h1>{session.weekday} - {session.date}</h1>
             <BoxButton>
-                {session.showtimes.map((hour) => <ButtonHour key={hour.id}>{hour.name}</ButtonHour>)}
+                {session.showtimes.map((hour) => <ButtonHour to={`sessao/${hour.id}`} key={hour.id}>{hour.name}</ButtonHour>)}
             </BoxButton>
             
         </Container>
@@ -31,9 +32,8 @@ const BoxButton = styled.div`
     gap: 10px;
 `
 
-const ButtonHour = styled.button `
-    width: 80px;
-    height: 40px;
+const ButtonHour = styled(Link) `
+    padding: 10px;
 
     background: #E8833A;
     border-radius: 3px;
@@ -42,5 +42,6 @@ const ButtonHour = styled.button `
     font-family: Roboto;
     font-size: 18px;
     color: #FFFFFF;
+    text-decoration: none;
 
 `;

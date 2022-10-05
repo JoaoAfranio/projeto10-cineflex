@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 export default function Movie({imgSrc, idMovie}) {
     return(
-        <Box href={`/filme/${idMovie}`}>
+        <Box to={`/filme/${idMovie}`}>
             <img src={imgSrc} alt="poster"></img>
         </Box>
         )
 }
 
 
-const Box = styled.a`
+const Box = styled(Link)`
     height: 200px;
     width: 130px;
 
