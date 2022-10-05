@@ -23,7 +23,7 @@ export default function Home() {
     return (
         <Main tittle={"Selecione o Filme"}>
             <ContainerMovies>
-                {listMovies.map((movie) => <Movie key={movie.id} imgSrc={movie.posterURL} />)}
+                {listMovies.map((movie) => <Movie key={movie.id} idMovie={movie.id} imgSrc={movie.posterURL} />)}
             </ContainerMovies>
         </Main>
     );

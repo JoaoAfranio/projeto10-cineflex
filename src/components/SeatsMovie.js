@@ -11,21 +11,24 @@ export default function SeatsMovie() {
     useEffect(() => {
         const URL = `https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${id}/seats`
         axios.get(URL)
-        .then((res) => {
-            setSession(res.data)
+        .then(({data}) => {
+            setSession(data)
         })
         .catch((err) => {
             console.log(err)
         })
 
-    }, [])
+    }, [id])
 
 
     return (
         <>
         {session && (
             <> 
-            {console.log(session.movie)}
+            
+            {console.log(session)}
+
+
                 <Main tittle={"Selecione o(s) assento(s)"}>
                     assentos
                 </Main>

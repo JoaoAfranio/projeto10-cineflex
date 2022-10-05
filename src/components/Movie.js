@@ -1,15 +1,15 @@
 import styled from "styled-components"
 
-export default function Movie({imgSrc}) {
+export default function Movie({imgSrc, idMovie}) {
     return(
-        <Box>
+        <Box href={`/filme/${idMovie}`}>
             <img src={imgSrc} alt="poster"></img>
         </Box>
         )
 }
 
 
-const Box = styled.div`
+const Box = styled.a`
     height: 200px;
     width: 130px;
 

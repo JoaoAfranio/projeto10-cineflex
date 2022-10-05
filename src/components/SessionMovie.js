@@ -29,7 +29,7 @@ export default function SessionMovie() {
             {movie && (
                 <>
                     <Main tittle={"Selecione o horário"}>
-                        {movieDays.map((session) => <Session key={session.id}session={session}/>)}
+                        {movieDays.map((session) => <Session key={session.id} session={session}/>)}
                     </Main>
                     <Footer imgSrc={movie.posterURL} tittle={movie.title}/>
                 </>
