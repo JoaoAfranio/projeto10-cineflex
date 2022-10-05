@@ -3,8 +3,10 @@ import GlobalStyle from "../assets/css/GlobalStyle";
 import Home from "./Home";
 import SessionMovie from "./SessionMovie";
 import SeatsMovie from "./SeatsMovie";
+import Sucess from "./Succes";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 export default function App(){
     return (
@@ -16,6 +18,7 @@ export default function App(){
                 <Route path="/" element={<Home />} />
                 <Route path="/filme/:id" element={<SessionMovie idMovie={"1"}/>} />
                 <Route path="/sessao/:id" element={<SeatsMovie idSession={"1"}/>} />
+                <Route path="/sucesso" element={<Sucess />} />
             </Routes>
         </BrowserRouter>     
     </>
