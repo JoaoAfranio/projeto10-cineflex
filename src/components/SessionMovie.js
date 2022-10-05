@@ -4,6 +4,7 @@ import Main from "./Main";
 import Session from "./Session";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
+import Header from "./Header";
 
 export default function SessionMovie() {
     const { id }  = useParams();
@@ -28,6 +29,7 @@ export default function SessionMovie() {
         <>
             {movie && (
                 <>
+                    <Header />
                     <Main tittle={"Selecione o horário"}>
                         {movieDays.map((session) => <Session key={session.id} session={session}/>)}
                     </Main>

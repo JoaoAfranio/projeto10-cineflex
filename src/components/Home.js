@@ -4,6 +4,7 @@ import Movie from "./Movie";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Header from "./Header";
 
 export default function Home() {
     const [listMovies, setListMovies] = useState([])
@@ -21,11 +22,15 @@ export default function Home() {
 
 
     return (
-        <Main tittle={"Selecione o Filme"}>
-            <ContainerMovies>
-                {listMovies.map((movie) => <Movie key={movie.id} idMovie={movie.id} imgSrc={movie.posterURL} />)}
-            </ContainerMovies>
-        </Main>
+        <>
+            <Header />
+            <Main tittle={"Selecione o Filme"}>
+                <ContainerMovies>
+                    {listMovies.map((movie) => <Movie key={movie.id} idMovie={movie.id} imgSrc={movie.posterURL} />)}
+                </ContainerMovies>
+            </Main>
+        </>
+        
     );
 }
 

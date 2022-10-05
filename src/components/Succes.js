@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom"
 import styled from "styled-components";
+import Header from "./Header";
 import Main from "./Main";
 
 export default function Sucess() {
@@ -8,26 +9,29 @@ export default function Sucess() {
     const session = location.state.movie;
 
     return (
-        <Main tittle={"Pedido feito com sucesso!"} sucess={true}>
-            <Info>
-                <h1>Filme e sessão</h1>
-                <h2 data-identifier="movie-session-infos-reserve-finished">{session?.movie.title}</h2>
-                <h2 data-identifier="movie-session-infos-reserve-finished">{session?.day.date} {session?.name}</h2>
-            </Info>
+        <>
+            <Header />
+            <Main tittle={"Pedido feito com sucesso!"} sucess={true}>
+                <Info>
+                    <h1>Filme e sessão</h1>
+                    <h2 data-identifier="movie-session-infos-reserve-finished">{session?.movie.title}</h2>
+                    <h2 data-identifier="movie-session-infos-reserve-finished">{session?.day.date} {session?.name}</h2>
+                </Info>
 
-            <Info>
-                <h1>Ingressos</h1>
-                {ids.map((id) => <h2 data-identifier="seat-infos-reserve-finished" key={id}>Assento {id}</h2>)}
-            </Info>
+                <Info>
+                    <h1>Ingressos</h1>
+                    {ids.map((id) => <h2 data-identifier="seat-infos-reserve-finished" key={id}>Assento {id}</h2>)}
+                </Info>
 
-            <Info>
-                <h1>Comprador</h1>
-                <h2 data-identifier="buyer-infos-reserve-finished">Nome: {name}</h2>
-                <h2 data-identifier="buyer-infos-reserve-finished">CPF: {cpf}</h2>
-            </Info>
+                <Info>
+                    <h1>Comprador</h1>
+                    <h2 data-identifier="buyer-infos-reserve-finished">Nome: {name}</h2>
+                    <h2 data-identifier="buyer-infos-reserve-finished">CPF: {cpf}</h2>
+                </Info>
 
-            <ButtonHome data-identifier="back-to-home-btn" to="/">Voltar para Home</ButtonHome>
-        </Main>
+                <ButtonHome data-identifier="back-to-home-btn" to="/">Voltar para Home</ButtonHome>
+            </Main>
+        </>
     )
 }
 

@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Header() {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     return (
         <Content>
-            <ion-icon name="arrow-back-outline"></ion-icon>
+            {location.pathname !== "/" && (
+                <ion-icon onClick={() => {navigate(-1)}}name="arrow-back-outline"></ion-icon>
+            )}
             <h1>CINEFLEX</h1>
         </Content>
     );

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./Footer";
+import Header from "./Header";
 import Main from "./Main";
 import Seat from "./Seat";
 
@@ -79,6 +80,7 @@ export default function SeatsMovie() {
         <>
         {session && (
             <> 
+                <Header />
                 <Main tittle={"Selecione o(s) assento(s)"}>
                     <BoxSeats>
                         {session?.seats?.map((s) => 
