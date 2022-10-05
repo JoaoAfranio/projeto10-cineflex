@@ -1,13 +1,20 @@
 import styled from "styled-components";
 
-export default function Footer({imgSrc, tittle}) {
+export default function Footer({imgSrc, tittle, time}) {
+    console.log(time)
+
     return(
             <Container>
                 <BoxImg>
                     <img src={imgSrc} alt="poster" />
                 </BoxImg>
                 
-                <h1>{tittle}</h1>
+                <BoxInfo>
+                    <h1>{tittle}</h1>
+                    {time && (
+                        <h1>{time.day} - {time.hour}</h1>
+                    )}
+                </BoxInfo>
             </Container>
           );
 }
@@ -45,8 +52,16 @@ const BoxImg = styled.div`
         height: 100%;
     }
 
-    h1 {
-        font-family: Roboto;
-        font-size: 26px;
-    }
+
 `;
+
+const BoxInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h1 {
+        font-size: 18px;
+        color: #293845;
+    }
+`

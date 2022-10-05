@@ -21,7 +21,6 @@ const ContainerMain = styled.div`
 `
 
 const TittleContainer = styled.h1`
-font-family: Roboto;
         font-size: 24px;
         letter-spacing: 0.04em;
         color: ${props => props.sucess === true ? "#247A6B" : "#293845"};

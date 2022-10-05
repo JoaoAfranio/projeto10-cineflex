@@ -67,7 +67,7 @@ export default function SeatsMovie() {
             })
             .then(response => {
                 const info = JSON.parse(response.config.data)
-                navigate('/sucesso', {state : {info}})
+                navigate('/sucesso', {state : {infoPurchase: info, movie: session }})
             })
             .catch(error  => {
                 console.log(error);
@@ -115,7 +115,7 @@ export default function SeatsMovie() {
 
                     <Button onClick={() => {bookSeats()}}>Reservar assento(s)</Button>
                 </Main>
-                <Footer imgSrc={session?.movie?.posterURL} tittle={session?.movie?.title}/>
+                <Footer imgSrc={session?.movie?.posterURL} tittle={session?.movie?.title} time={{day : session?.day?.weekday, hour: session?.name}}/>
             </>
         )}
         </>
